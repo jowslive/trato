@@ -2,9 +2,22 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  background: url("https://i.imgur.com/2v5lm8q.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  margin-top: -86px;
+  z-index: -1;
 }
 
 .config-form {
   width: 400px;
   margin-right: 10vw;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
 }
