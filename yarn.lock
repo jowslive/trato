@@ -3313,6 +3313,13 @@ globule@^1.0.0:
     lodash "~4.17.10"
     minimatch "~3.0.2"
 
+google-font@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/google-font/-/google-font-1.0.1.tgz#41641fb979b6e9fa5a86d10ce01b94fab7c45071"
+  integrity sha1-QWQfuXm26fpahtEM4BuU+rfEUHE=
+  dependencies:
+    shelljs "^0.6.0"
+
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.2.2:
   version "4.2.6"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
@@ -6512,6 +6519,11 @@ shebang-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-1.0.0.tgz#da42f49740c0b42db2ca9728571cb190c98efea3"
   integrity sha1-2kL0l0DAtC2yypcoVxyxkMmO/qM=
+
+shelljs@^0.6.0:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.6.1.tgz#ec6211bed1920442088fe0f70b2837232ed2c8a8"
+  integrity sha1-7GIRvtGSBEIIj+D3Cyg3Iy7SyKg=
 
 signal-exit@^3.0.0:
   version "3.0.3"
