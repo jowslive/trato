@@ -1,1 +1,35 @@
 // Specific CSS for your home-page
+.homepage {
+  background: url("https://i.imgur.com/2v5lm8q.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  margin-top: -86px;
+  z-index: -1;
+}
+
+.main-container {
+  padding-top: 25vh;
+  text-shadow: 1px 1px 15px rgba(0, 0, 0, 1);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.intro-text .main {
+  display: block;
+  font-size: 48px; 
+  color: white;
+}
+
+.intro-text .sub {
+  color: white;
+  text-shadow: 1px 1px 15px rgba(0, 0, 0, 1);
+  font-weight: bold;
+  font-size: 30px;
+  padding: 30px 0;
+}
+
