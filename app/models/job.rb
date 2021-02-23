@@ -1,5 +1,5 @@
 class Job < ApplicationRecord
-  has_many :users_jobs_applieds
+  has_many :enrollments
   belongs_to :user
 
   validates :cnpj, presence: true
