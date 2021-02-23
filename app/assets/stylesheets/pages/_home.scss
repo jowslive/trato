@@ -13,7 +13,7 @@
 }
 
 .main-container {
-  padding-top: 25vh;
+  padding-top: 35vh;
   text-shadow: 1px 1px 15px rgba(0, 0, 0, 1);
   font-weight: bold;
   font-size: 30px;
@@ -33,14 +33,15 @@
   padding: 30px 0;
 }
 
+/*
 @media screen and (max-width: 350px) {
   .main-container {
     padding-top: 10%;
   }
 }
+*/
 
-
-@media screen and (min-width: 360px) {
+@media screen and (max-width: 360px) {
   .main-container {
     padding-top: 30%;
   }
