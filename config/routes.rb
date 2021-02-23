@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   # Rotas de Jobs
   resources :jobs, only: [:create, :edit, :index, :new, :show, :update] do
-    resources :enrollments, only: [:create, :destroy]
+    resources :enrollments, only: [:create]
   end
+  resources :enrollments, only: [:destroy]
   # Pagina Inicial
   root to: 'pages#home'
 end
