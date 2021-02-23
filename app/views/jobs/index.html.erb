@@ -1,2 +1,44 @@
-<h1>Jobs#index</h1>
-
+<% if user_signed_in? %>
+  <div class="card-container d-flex justify-content-around flex-wrap w-100 mt-5">
+    <div class="row">
+      <% @jobs.order(:id).each do |job| %>
+        <% if job.amount > 0 || current_user.id == job.user_id %>
+          <div class="d-flex justify-content-center col-md-4 mb-5 p-0" >
+            <div class="card custom-card">
+              <div class="card-body">
+                <h5 class="card-title"> <%= job.name %> </h5>
+                <div class="scrollbar custom-p-card mb-3">
+                  <p class="card-text mr-3"> <%= job.content %> </p>
+                </div>
+                <%= link_to "More Info", job_path(job), class: "btn btn-primary card-link" %>
+                <% if current_user.id == job.user_id %>
+                  <%= link_to "Edit Job", edit_job_path(job), class: "btn btn-info card-link text-white" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="card-container d-flex justify-content-around flex-wrap w-100 mt-5">
+    <div class="row">
+      <% @jobs.order(:id).each do |job| %>
+        <% if job.amount > 0 %>
+          <div class="d-flex justify-content-center col-md-4 mb-5 p-0" >
+            <div class="card custom-card">
+              <div class="card-body">
+                <h5 class="card-title"> <%= job.name %> </h5>
+                <div class="scrollbar custom-p-card mb-3">
+                  <p class="card-text mr-3"> <%= job.content %> </p>
+                </div>
+                <%= link_to "More Info", job_path(job), class: "btn btn-primary card-link" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
