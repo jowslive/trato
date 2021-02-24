@@ -32,6 +32,7 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'httparty'
 
 group :development, :test do
   gem 'pry-byebug'

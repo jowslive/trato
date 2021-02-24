@@ -1,2 +1,28 @@
-<h1>Jobs#show</h1>
-<p>Find me in app/views/jobs/show.html.erb</p>
+<div class="d-flex justify-content-end flex-column">
+  <div class="title-job">
+    <h1 class='ml-5'><%= @job.name.upcase %></h1>
+  </div>
+
+  <div class="container-all d-flex justify-content-around">
+    <div class="card card-info ">
+      <div class="info-name-company d-flex justify-content-center">
+        <p><%= @job.company_name %></p>
+      </div>
+      <div class="info-cnpj d-flex justify-content-center">
+        <p>CNPJ: <%= @job.cnpj %></p>
+      </div>
+      <div class="info-phone d-flex justify-content-center">
+        <p><%= @job.phone %></p>
+      </div>
+    </div>
+
+    <div class="card card-content-job">
+      <h2 class='style-content'>
+        <%= @job.content %>
+      </h2>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Apply job', class: 'btn btn-primary' %>
+

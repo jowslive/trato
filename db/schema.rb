@@ -10,19 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_23_181327) do
+ActiveRecord::Schema.define(version: 2021_02_24_165651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "enrollments", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "job_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["job_id"], name: "index_enrollments_on_job_id"
-    t.index ["user_id"], name: "index_enrollments_on_user_id"
-  end
 
   create_table "jobs", force: :cascade do |t|
     t.string "cnpj"
@@ -32,6 +23,8 @@ ActiveRecord::Schema.define(version: 2021_02_23_181327) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.text "content"
+    t.string "company_name"
+    t.string "phone"
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
@@ -48,7 +41,16 @@ ActiveRecord::Schema.define(version: 2021_02_23_181327) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "enrollments", "jobs"
-  add_foreign_key "enrollments", "users"
+  create_table "users_jobs_applieds", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "job_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["job_id"], name: "index_users_jobs_applieds_on_job_id"
+    t.index ["user_id"], name: "index_users_jobs_applieds_on_user_id"
+  end
+
   add_foreign_key "jobs", "users"
+  add_foreign_key "users_jobs_applieds", "jobs"
+  add_foreign_key "users_jobs_applieds", "users"
 end
