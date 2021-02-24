@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Rotas do Devise
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
   # Rotas de Jobs e Enrollments
   resources :jobs, only: [:create, :edit, :index, :new, :show, :update] do
     resources :enrollments, only: [:create]
