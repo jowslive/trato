@@ -10,3 +10,16 @@
 .navbar-lewagon .navbar-brand img {
   width: 60px;
 }
+
+.navbar-arrows {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.dropdown-toggle::after {
+  border-top: 0.4em solid;
+  border-right: 0.4em solid transparent;
+  border-left: 0.4em solid transparent;
+  vertical-align: 0em;
+}
