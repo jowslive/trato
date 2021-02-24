@@ -4,27 +4,27 @@
   </div>
 
   <div class="container-all d-flex justify-content-around">
-    <div class="card card-info ">
-      <div class="info-name-company d-flex justify-content-center">
+    <div class="card card-info d-flex justify-content-center align-items-center">
+      <div class="info-name-company">
         <p><%= @job.company_name %></p>
       </div>
-      <div class="info-cnpj d-flex justify-content-center">
+      <div class="info-cnpj">
         <p>CNPJ: <%= @job.cnpj %></p>
       </div>
-      <div class="info-phone d-flex justify-content-center">
+      <div class="info-phone">
         <p><%= @job.phone %></p>
       </div>
     </div>
 
-    <div class="card card-content-job">
-      <h2 class='style-content'>
+    <div class="card card-content-job scrollbar">
+      <p class='style-content'>
         <%= @job.content %>
-      </h2>
+      </p>
     </div>
   </div>
 </div>
 <div class="btn-apply">
-  <%= link_to 'Apply job', jobs_path, class: 'btn btn-primary' %>
+  <%= link_to 'Apply to job', jobs_path, class: 'btn btn-primary' %>
 </div>
 
 
