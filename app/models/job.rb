@@ -10,15 +10,13 @@ class Job < ApplicationRecord
   validates :amount, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   def check_cnpj
-    url = "https://www.receitaws.com.br/v1/cnpj/#{self.cnpj}"
+    url = "https://www.receitaws.com.br/v1/cnpj/#{cnpj}"
     begin
       data = JSON.parse HTTParty.get(url, timeout: 1).body
-      if self.company_name = data['fantasia'] == ""
-        self.company_name = data['nome']
-      end
+      self.company_name = data['nome'] if self.company_name = data['fantasia'] == ""
       self.cnpj = data['cnpj']
       self.phone = data['telefone']
-    rescue
+    rescue StandardError
       data = { 'Erro:': 'Consulta do CNPJ demorou muito para retornar. Tente novamente mais tarde.' }.to_json
     end
   end
