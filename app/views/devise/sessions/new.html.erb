@@ -14,8 +14,8 @@
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
 
-      <div class="form-actions d-flex justify-content-between container-link-login">
-        <%= f.button :submit, "Log in", class: 'btn btn-primary' %>
+      <div class="form-actions container-link-login">
+        <%= f.button :submit, "Log in", class: 'btn btn-success text-white float-right' %>
         <%= render "devise/shared/links" %>
       </div>
     <% end %>

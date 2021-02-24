@@ -7,6 +7,10 @@
   font-family:'Times New Roman', Times, serif ;
 }
 
+.btn-apply {
+  margin-top: 40px;
+  text-align: center;
+}
 
 .card-info {
   width: 30%;
@@ -14,26 +18,22 @@
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);
 }
 
+.card-content-job {
+  width: 30%;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  text-align: justify;
+  text-justify: inter-word;
+  height: 30vh;
+  overflow: auto;
+}
+
 .info-name-company {
   font-weight: bold;
   font-size: 30px;
 }
 
-.card-content-job {
-  width: 30%;
-  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .style-content {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  text-align: center;
-  font-weight: 400;
-}
-
-.btn-apply {
-  margin-top: 40px;
-  text-align: center;
+  font-family: 'Roboto', 'Times New Roman', Times, serif;
+  font-weight: normal;
 }

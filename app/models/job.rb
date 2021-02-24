@@ -1,7 +1,6 @@
 class Job < ApplicationRecord
   has_many :enrollments
   belongs_to :user
-
   before_save :check_cnpj
 
   validates :name, presence: true
@@ -13,7 +12,7 @@ class Job < ApplicationRecord
     url = "https://www.receitaws.com.br/v1/cnpj/#{cnpj}"
     begin
       data = JSON.parse HTTParty.get(url, timeout: 1).body
-      self.company_name = data['nome'] if self.company_name = data['fantasia'] == ""
+      self.company_name = data['fantasia'] == "" ? data['nome'] : data['fantasia']
       self.cnpj = data['cnpj']
       self.phone = data['telefone']
     rescue StandardError
