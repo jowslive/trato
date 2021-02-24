@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2021_02_24_165651) do
 
   # These are extensions that must be enabled in order to support this database
@@ -45,7 +44,6 @@ ActiveRecord::Schema.define(version: 2021_02_24_165651) do
     t.index ["job_id"], name: "index_enrollments_on_job_id"
     t.index ["user_id"], name: "index_enrollments_on_user_id"
   end
-
 
   create_table "jobs", force: :cascade do |t|
     t.string "cnpj"
