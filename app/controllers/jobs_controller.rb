@@ -5,7 +5,13 @@ class JobsController < ApplicationController
 
   # Listagem de todos os Jobs
   def index
-    @jobs = Job.all
+    if current_user
+      @jobs = Set.new(current_user.jobs.order(:created_at))
+      Job.all.order(:created_at).each { |job| @jobs << job }
+    else
+      @jobs = Job.all.order(:created_at)
+    end
+    @jobs
   end
 
   # Lista um Job
@@ -39,7 +45,7 @@ class JobsController < ApplicationController
   # Acao de Update
   def update
     if @job.update(job_params) && current_user.id == @job.user_id
-      redirect_to jobs_path
+      redirect_to job_path(@job)
     else
       render :new
     end
