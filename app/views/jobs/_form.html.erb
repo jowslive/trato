@@ -1,10 +1,10 @@
 <div class="container w-50 mt-5">
   <div class="container-form">
     <%= simple_form_for @job do |f| %>
-      <%= f.input :name, placeholder: 'Job'%>
+      <%= f.input :name, placeholder: 'Job position'%>
       <%= f.input :content, placeholder: 'Job details' %>
-      <%= f.input :cnpj, placeholder: '00.000.000/0000-00' %>
-      <%= f.input :amount, placeholder: '1' %>
+      <%= f.input :cnpj, placeholder: '14 digits number' %>
+      <%= f.input :amount, placeholder: 'Number of openings' %>
       <%= link_to 'Back', jobs_path, class: 'btn btn-primary' %>
       <%= f.submit class: 'btn btn-success float-right text-white' %>
     <% end %>
