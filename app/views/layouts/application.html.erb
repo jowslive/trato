@@ -5,14 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
-    <%= favicon_link_tag 'trato.ico' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= favicon_link_tag 'trato.ico' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
+  <body class="scrollbar">
     <div class="background-custom"></div>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>

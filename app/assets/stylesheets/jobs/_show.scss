@@ -21,15 +21,13 @@
 }
 
 .style-content {
-  font-family: 'Roboto', 'Times New Roman', Times, serif;
-  font-weight: normal;
+  font-family: 'Roboto';
+  font-weight: 400;
 }
 
 .title-job {
-  text-align: center;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  font-size: 32px;
-  font-weight: bold;
-  font-family:'Times New Roman', Times, serif ;
+  font-size: 40px;
+  font-weight: 900 !important;
+  font-family: 'Nunito', sans-serif;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.445);
 }
