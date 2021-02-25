@@ -24,7 +24,14 @@
   </div>
 </div>
 <div class="btn-block text-center mt-5">
-  <%= link_to 'Apply to job', jobs_path, class: 'btn btn-lg btn-success text-white' %>
+  <% if @job.user_id == current_user.id %>
+    <%= link_to 'Back', jobs_path, class: 'btn btn-lg btn-primary text-white' %>
+    <%= link_to "✏️ Edit Job", edit_job_path(@job), class: "btn btn-lg btn-info card-link text-white" %>
+  <% elsif @enrollment.present? %>
+    <%= link_to 'Already applied 🎉', jobs_path, class: 'btn btn-lg btn-primary text-white' %>
+  <% else %>
+    <%= link_to 'Apply to job', job_enrollments_path(@job), class: 'btn btn-lg btn-success text-white', method: 'POST' %>
+  <% end %>
 </div>
 
 
