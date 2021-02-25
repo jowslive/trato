@@ -3,10 +3,10 @@
     <div class="row w-100">
       <% @jobs.order(:id).each do |job| %>
         <% if job.amount > 0 || current_user.id == job.user_id %>
-          <div class="d-flex justify-content-center col-md-3 mb-5 p-0" >
+          <div class="col-md-4 d-flex justify-content-center mb-5 p-0" >
             <div class="card custom-card">
               <div class="card-body">
-                <h5 class="card-title"> <%= job.name %> </h5>
+                <h5 class="card-title"> <b> <%= job.name %> </b> </h5>
                 <div class="scrollbar custom-p-card mb-3">
                   <p class="card-text mr-3"> <%= job.content %> </p>
                 </div>
@@ -26,10 +26,10 @@
     <div class="row w-100">
       <% @jobs.order(:id).each do |job| %>
         <% if job.amount > 0 %>
-          <div class="d-flex justify-content-center col-md-3 mb-5 p-0" >
+          <div class="col-md-4 d-flex justify-content-center mb-5 p-0" >
             <div class="card custom-card">
               <div class="card-body">
-                <h5 class="card-title"> <%= job.name %> </h5>
+                <h5 class="card-title"> <b> <%= job.name %> </b> </h5>
                 <div class="scrollbar custom-p-card mb-3">
                   <p class="card-text mr-3"> <%= job.content %> </p>
                 </div>
