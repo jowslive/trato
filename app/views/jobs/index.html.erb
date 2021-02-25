@@ -10,9 +10,9 @@
                 <div class="scrollbar custom-p-card mb-3">
                   <p class="card-text mr-3"> <%= job.content %> </p>
                 </div>
-                <%= link_to "More Info", job_path(job), class: "btn btn-primary card-link" %>
+                <%= link_to "📝 More Info", job_path(job), class: "btn btn-primary card-link" %>
                 <% if current_user.id == job.user_id %>
-                  <%= link_to "Edit Job", edit_job_path(job), class: "btn btn-info card-link text-white float-right" %>
+                  <%= link_to "✏️ Edit Job", edit_job_path(job), class: "btn btn-info card-link text-white float-right" %>
                 <% end %>
               </div>
             </div>
@@ -33,7 +33,7 @@
                 <div class="scrollbar custom-p-card mb-3">
                   <p class="card-text mr-3"> <%= job.content %> </p>
                 </div>
-                <%= link_to "More Info", job_path(job), class: "btn btn-primary card-link" %>
+                <%= link_to "📝 More Info", job_path(job), class: "btn btn-primary card-link" %>
               </div>
             </div>
           </div>

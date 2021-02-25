@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: %i[edit show update]
+  before_action :set_enrollment, only: %i[show]
   skip_before_action :authenticate_user!, only: %i[index]
 
   # Listagem de todos os Jobs
@@ -52,5 +53,9 @@ class JobsController < ApplicationController
 
   def set_job
     @job = Job.find(params[:id])
+  end
+
+  def set_enrollment
+    @enrollment = Enrollment.find_by(user_id: current_user, job_id: params[:id])
   end
 end
