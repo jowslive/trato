@@ -9,6 +9,7 @@
     "bootstrap": "^4.6.0",
     "google-font": "^1.0.1",
     "jquery": "^3.5.1",
+    "popper": "^1.0.1",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
   },
