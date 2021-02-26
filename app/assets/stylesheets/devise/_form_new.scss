@@ -1,89 +1,34 @@
-.geral-container {
+.container-forms {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background: url("https://i.imgur.com/2v5lm8q.jpeg") no-repeat center center fixed;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  margin-top: -87px;
+  z-index: -1;
+}
+
+.custom-form {
+  background-color: white;
+  margin-top: 10vh;
+  margin-left: 8vw;
+  padding: 20px;
+}
+
+.left-half {
+  flex: 1;
+  padding: 1rem;
+  margin-top: 87px;
+  background: url("https://i.imgur.com/3qEfsL2.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
-  margin-top: -86px;
-  z-index: -1;
 }
 
-.config-form {
-  width: 400px;
-  margin-right: 10vw;
+.right-half {
+  box-shadow: -4px 0 4px -4px #333;
+  flex: 1;
+  padding: 1rem;
+  margin-top: 87px;
   background-color: white;
-  border-radius: 10px;
-  padding: 20px;
-}
-
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.config-form-login {
-  width: 400px;
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
-}
-
-@media screen and (max-width: 400px) {
-  .config-form-login {
-    width: auto;
-    margin: 0%;
-  }
-
-  .container-link-login {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .geral-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-
-  .config-form {
-    margin: 0%;
-    width: 90%;
-}
-
-}
-
-
-@media screen and (max-width: 800px) {
-  .config-form-login {
-    width: auto;
-    margin: 0%;
-  }
-
-  .container-link-login {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .geral-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-
-  .config-form {
-    margin: 0%;
-    width: 90%;
-}
-
 }
