@@ -49,8 +49,12 @@ class JobsController < ApplicationController
     end
   end
 
-  def mine
+  def my
     @jobs = Set.new(current_user.jobs.order(:created_at))
+  end
+
+  def my_applications
+    @enrollments = Set.new(current_user.enrollments.order(:created_at))
   end
 
   private
