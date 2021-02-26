@@ -19,9 +19,9 @@
     </div>
 
     <div class="card card-content-job scrollbar">
-      <p class='style-content'>
+      <textarea class="style-content scrollbar" disabled>
         <%= @job.content %>
-      </p>
+      </textarea>
       <br>
       <% if current_user.id == @job.user_id %>
         <strong>Number of openings:</strong>
