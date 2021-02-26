@@ -14,7 +14,7 @@
                   <div class="d-flex justify-content-between"> 
                     <%= job.name %>
                     <% unless Enrollment.where(job: job, user: current_user).empty? %>
-                      <i class="far fa-thumbs-up fa-lg text-center text-success float-right ml-3" title="Applied"></i>
+                      <i class="far fa-thumbs-up fa-lg text-center text-success float-right ml-3 custom-tooltip top" data-tooltip="Applied!"></i>
                     <% end %>
                   </div>
                 </h5>

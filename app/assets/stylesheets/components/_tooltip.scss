@@ -1,0 +1,50 @@
+.custom-tooltip {
+	position: relative;
+	&::after {
+		font-size: 1rem;
+		font-weight: normal;
+		content: attr(data-tooltip);
+		background-color: #000000cc;
+		border-radius: 10px;
+		color: #ffffff;
+		display: block;
+		padding: 8px 12px;
+		position: absolute;
+		text-align: center;
+		z-index: 999;
+		transition: all 200ms;
+	}
+	
+	&#{&}-xl::after { width: 400px; }
+	&#{&}-lg::after { width: 255px; }
+	&#{&}-md::after { width: 127px; }
+	
+	&.top::after {
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, calc(-100% - 10px)) scale(0);
+	}
+	&.right::after {
+		top: 50%;
+		right: 0;
+		transform: translate(calc(100% + 10px), -50%) scale(0);
+	}
+	&.bottom::after {
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, calc(100% + 10px)) scale(0);
+	}
+	&.left::after {
+		top: 50%;
+		left: 0;
+		transform: translate(calc(-100% - 10px), -50%) scale(0);
+	}
+	
+	&:hover::after { transform: scale(1); }
+	&:hover{
+		&.top::after { transform: translate(-50%, calc(-100% - 10px)); }
+		&.right::after { transform: translate(calc(100% + 10px), -50%); }
+		&.bottom::after { transform: translate(-50%, calc(100% + 10px)); }
+		&.left::after { transform: translate(calc(-100% - 10px), -50%); }
+	}
+}

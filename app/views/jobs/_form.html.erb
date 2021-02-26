@@ -6,7 +6,7 @@
       <h2 class="text-center"> New Job </h2>
     <% end %>
     <%= simple_form_for @job do |f| %>
-      <%= f.input :name, placeholder: 'Job position'%>
+      <%= f.input :name, placeholder: 'Job position' %>
       <%= f.input :content, placeholder: 'Job details' %>
       <% if @job.cnpj %>
         <%= f.input :cnpj, hint: "Only numbers", input_html: { value: @job.cnpj.scan(/\d/).join, type: "number" } %>
