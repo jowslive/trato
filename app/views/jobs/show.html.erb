@@ -28,7 +28,9 @@
         <p> 
           <%= @job.amount %> 
         </p>
-        <strong>Candidates:</strong>
+        <% if @job.enrollments.size > 0 %>
+          <strong>Candidates:</strong>
+        <% end %>
         <% @job.enrollments.each do |enrollment| %>
           <p>
             <%= enrollment.user.name %>, applied on <%= enrollment.created_at.strftime("%d %b. %Y") %> - Email: <%= enrollment.user.email %> 
