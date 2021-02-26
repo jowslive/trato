@@ -29,8 +29,9 @@
           </div>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Account Settings", edit_user_registration_path , class: "dropdown-item" %>
+            <%= link_to "All Jobs", jobs_path , class: "dropdown-item" %>
             <%= link_to "Create Job", new_job_path , class: "dropdown-item" %>
-            <%= link_to "List Jobs", jobs_path , class: "dropdown-item" %>
+            <%= link_to "My Jobs", mine_jobs_path , class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

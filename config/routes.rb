@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations' }
   # Rotas de Jobs e Enrollments
   resources :jobs, only: [:create, :edit, :index, :new, :show, :update] do
+    collection do 
+      get "mine"
+    end
     resources :enrollments, only: [:create]
   end
   resources :enrollments, only: [:destroy]
