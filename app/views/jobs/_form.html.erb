@@ -7,7 +7,11 @@
     <% end %>
     <%= simple_form_for @job do |f| %>
       <%= f.input :name, placeholder: 'Job position' %>
-      <%= f.input :content, placeholder: 'Job details' %>
+      <% if @job.content %>
+        <%= f.input :content, input_html: { value: @job.content.html_safe } %>
+      <% else %>
+        <%= f.input :content, placeholder: 'Job details' %>
+      <% end %>
       <% if @job.cnpj %>
         <%= f.input :cnpj, hint: "Only numbers", input_html: { value: @job.cnpj.scan(/\d/).join, type: "number" } %>
       <% else %>
