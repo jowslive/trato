@@ -16,7 +16,7 @@ class EnrollmentsController < ApplicationController
   def destroy
     @enrollment = Enrollment.find_by(job_id: params[:id], user_id: current_user)
     @enrollment.destroy
-    redirect_to jobs_path
+    redirect_to jobs_path, notice: "Cancelled application!"
   end
 
   private
