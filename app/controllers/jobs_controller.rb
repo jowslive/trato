@@ -49,6 +49,10 @@ class JobsController < ApplicationController
     end
   end
 
+  def mine
+    @jobs = Set.new(current_user.jobs.order(:created_at))
+  end
+
   private
 
   def job_params

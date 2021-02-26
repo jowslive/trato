@@ -1,0 +1,33 @@
+<div class="card-container d-flex justify-content-around flex-wrap w-100 mt-5">
+  <div class="row w-100">
+    <% @jobs.each do |job| %>
+      <% if job.amount > 0 || current_user.id == job.user_id %>
+        <div class="col-md-4 d-flex justify-content-center mb-5 p-0" >
+          <% if Enrollment.where(job: job, user: current_user).empty? %>
+            <div class="card custom-card">
+          <% else %>
+            <div class="card custom-card bordered-card">
+          <% end %>
+            <div class="card-body">
+              <h5 class="card-title"> 
+                <div class="d-flex justify-content-between"> 
+                  <%= job.name %>
+                  <% unless Enrollment.where(job: job, user: current_user).empty? %>
+                    <i class="far fa-thumbs-up fa-lg text-center text-success float-right ml-3" title="Applied"></i>
+                  <% end %>
+                </div>
+              </h5>
+              <div class="scrollbar custom-p-card mb-3">
+                <p class="card-text mr-3"> <%= job.content %> </p>
+              </div>
+              <%= link_to "📝 More Info", job_path(job), class: "btn btn-primary card-link" %>
+              <% if current_user.id == job.user_id %>
+                <%= link_to "✏️ Edit Job", edit_job_path(job), class: "btn btn-info card-link text-white float-right" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
