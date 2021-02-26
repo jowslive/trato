@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # Rotas de Jobs e Enrollments
   resources :jobs, only: [:create, :edit, :index, :new, :show, :update] do
     collection do 
-      get "mine"
+      get "my"
+      get "my_applications"
     end
     resources :enrollments, only: [:create]
   end

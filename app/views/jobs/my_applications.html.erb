@@ -1,0 +1,22 @@
+<div class="card-container d-flex justify-content-around flex-wrap w-100 mt-5">
+  <div class="row w-100">
+    <% @enrollments.each do |enrollment| %>
+      <div class="col-md-4 d-flex justify-content-center mb-5 p-0" >
+          <div class="card custom-card bordered-card">
+          <div class="card-body">
+            <h5 class="card-title"> 
+              <div class="d-flex justify-content-between"> 
+                <%= enrollment.job.name %>
+                <i class="far fa-thumbs-up fa-lg text-center text-success float-right ml-3" title="Applied"></i>
+              </div>
+            </h5>
+            <div class="scrollbar custom-p-card mb-3">
+              <p class="card-text mr-3"> <%= enrollment.job.content %> </p>
+            </div>
+            <%= link_to "📝 More Info", job_path(enrollment.job), class: "btn btn-primary card-link" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
