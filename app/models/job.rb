@@ -1,6 +1,6 @@
 class Job < ApplicationRecord
-  has_many :enrollments
   belongs_to :user
+  has_many :enrollments
   before_save :check_cnpj
 
   validates :name, presence: true

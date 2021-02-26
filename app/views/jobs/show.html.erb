@@ -22,6 +22,19 @@
       <p class='style-content'>
         <%= @job.content %>
       </p>
+      <br>
+      <% if current_user.id == @job.user_id %>
+        <strong>Number of openings:</strong>
+        <p> 
+          <%= @job.amount %> 
+        </p>
+        <strong>Candidates:</strong>
+        <% @job.enrollments.each do |enrollment| %>
+          <p>
+            <%= enrollment.user.name %>, applied on <%= enrollment.created_at.strftime("%d %b. %Y") %> - Email: <%= enrollment.user.email %> 
+          </p>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
